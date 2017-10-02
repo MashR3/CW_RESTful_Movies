@@ -1,0 +1,18 @@
+<h1>Movies Index Page</h1>
+
+<h3><a href="/movies/new">Add a Movie</a></h3>
+
+<% @movies.each do |movie| %>
+
+	<a href="movies/<%= movie.id %>"<h2><%= movie.title %></h2></a>
+	<p><%= movie.desc %> - <strong><%= movie.age_r %></strong></p>
+	<p><a href="movies/<%=movie.id %>/edit"<h2> Update Movie </h2></a></p>
+
+	<form action="/movies/<%= movie.id %>" method="POST">
+		<%= token_tag %>
+		<input class="button" type="hidden" name="_method" value="DELETE">
+		<input class="button" type="submit" value="DELETE">
+
+	</form>
+
+<% end %>

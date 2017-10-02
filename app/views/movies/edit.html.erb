@@ -1,0 +1,18 @@
+<h1>Update Movie Details</h1>
+
+<%= form_for(@movies) do |movie| %>
+	
+	<%= token_tag %>
+
+      <%= movie.label :title %>
+      <%= movie.text_field :title%>
+
+      <%= movie.label :desc %>
+      <%= movie.text_field :desc%>
+
+      <%= movie.label :age_r %>
+      <%= movie.text_field :age_r%>
+
+      <%= movie.submit "Save changes"%>
+
+<% end %>
